@@ -12,7 +12,7 @@ export interface About {
     heading: string;
     description: string;
     skills: {
-        icon?: ComponentType<{ className?:string }> | undefined;
+        icon: ComponentType<{ className?: string }>;
         title: string;
         description: string;
     }[];
@@ -38,7 +38,7 @@ export interface Learning {
     heading: string;
     description: string;
     items: {
-        icon?: ComponentType<{ className?:string }>;
+        icon: ComponentType<{ className?: string }>;
         title: string;
         description: string;
     }[];
@@ -51,7 +51,7 @@ export interface Contact {
     phone: string;
     address: string;
     socialLinks: {
-        icon?: ComponentType<{ className?:string }>;
+        icon: ComponentType<{ className?: string }>;
         platform: string;
         url: string;
     }[];

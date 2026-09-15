@@ -15,17 +15,20 @@ export default function About() {
                 {about.description}
               </p>
               <dl className="mt-10 max-w-xl space-y-8 text-base/7 text-gray-400 lg:max-w-none">
-                {about.skills.map((skill) => (
-                  <div key={skill.title} className="relative pl-9">
-                    <dt className="inline font-semibold text-white">
-                      {skill.icon && (
-                        <skill.icon aria-hidden="true" className="absolute top-1 left-1 size-5 text-indigo-400" />
-                      )}
-                      {skill.title}
-                    </dt>{' '}
-                    <dd className="inline">{skill.description}</dd>
-                  </div>
-                ))}
+                {about.skills.map((skill) => {
+                  const Icon = skill.icon;
+                  return (
+                    <div key={skill.title} className="relative pl-9">
+                      <dt className="inline font-semibold text-white">
+                        {Icon && (
+                          <Icon aria-hidden="true" className="absolute top-1 left-1 size-5 text-indigo-400" />
+                        )}
+                        {skill.title}
+                      </dt>{' '}
+                      <dd className="inline">{skill.description}</dd>
+                    </div>
+                  );
+                })}
               </dl>
             </div>
           </div>

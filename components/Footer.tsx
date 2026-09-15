@@ -26,16 +26,17 @@ export default function Footer() {
             </address>
           <div className='mt-12'>
             <div className='flex flex-row items-start gap-8'>
-              {contact.socialLinks.map((socialLink) => (
-                <div key={socialLink.platform}>
-                  <div className="rounded-md bg-white/5 p-4 ring-1 ring-white/10 flex items-center justify-center w-12">
-                  {socialLink.icon && (
-                    <socialLink.icon aria-hidden="true" className="size-6 text-white" />
-                  )}
-                </div>
-                <p className="mt-4 text-base">{socialLink.platform}</p>
-              </div>
-              ))}
+              {contact.socialLinks.map((socialLink) => {
+                const Icon = socialLink.icon;
+                return (
+                  <div key={socialLink.platform}>
+                    <div className="rounded-md bg-white/5 p-4 ring-1 ring-white/10 flex items-center justify-center w-12">
+                      {Icon && <Icon aria-hidden="true" className="size-6 text-white" />}
+                    </div>
+                    <p className="mt-4 text-base">{socialLink.platform}</p>
+                  </div>
+                );
+              })}
             </div>
           </div>
           </div>
