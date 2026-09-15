@@ -18,7 +18,9 @@ export default function About() {
                 {about.skills.map((skill) => (
                   <div key={skill.title} className="relative pl-9">
                     <dt className="inline font-semibold text-white">
-                      <skill.icon aria-hidden="true" className="absolute top-1 left-1 size-5 text-indigo-400" />
+                      {skill.icon && (
+                        <skill.icon aria-hidden="true" className="absolute top-1 left-1 size-5 text-indigo-400" />
+                      )}
                       {skill.title}
                     </dt>{' '}
                     <dd className="inline">{skill.description}</dd>

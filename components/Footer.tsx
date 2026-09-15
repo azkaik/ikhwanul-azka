@@ -29,7 +29,9 @@ export default function Footer() {
               {contact.socialLinks.map((socialLink) => (
                 <div key={socialLink.platform}>
                   <div className="rounded-md bg-white/5 p-4 ring-1 ring-white/10 flex items-center justify-center w-12">
-                  <socialLink.icon aria-hidden="true" className="size-6 text-white" />
+                  {socialLink.icon && (
+                    <socialLink.icon aria-hidden="true" className="size-6 text-white" />
+                  )}
                 </div>
                 <p className="mt-4 text-base">{socialLink.platform}</p>
               </div>
